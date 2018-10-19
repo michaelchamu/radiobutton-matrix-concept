@@ -4,7 +4,7 @@ import axios from 'axios';
 import randomstring from 'randomstring';
 import {EditableTextField} from 'react-bootstrap-xeditable';
 import { API_URL} from "../config/config";
-
+let formData = new FormData();
 
 class Home extends Component {
 
@@ -87,7 +87,14 @@ class Home extends Component {
         //get name
         //get id
         //post to update
-        //this.setState({file}); /// if you want to upload latter
+       formData.append('image', file);
+        axios.post(`${API_URL}/pics`, formData).then((result) => {
+            console.log(result);
+            //Perform action based on response
+        }).catch((error) => {
+                console.log(error);
+                //Perform action based on error
+            });
     }
 
     handleAddRow = () => {
@@ -99,10 +106,6 @@ class Home extends Component {
             rows: [...this.state.rows, item]
 
         });
-        //get label
-        //get id
-        //get type
-        //send
         this.saveData({'type': 'row', 'label': this.state.defaultRowName, 'uniquekey': item.name })
 
     };
@@ -115,11 +118,6 @@ class Home extends Component {
             columns: [...this.state.columns, item],
             rows: [...this.state.rows]
         });
-
-        //get label
-        //get id
-        //get type
-        //send
         this.saveData({'type': 'column', 'label': this.state.defaultColumnName, 'uniquekey':  item.name  })
     };
 
