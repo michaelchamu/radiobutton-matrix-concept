@@ -277,9 +277,13 @@ class Home extends Component {
                 <div className="row">
                     <div className="col-md-6">
                         <h4><b>Legend</b></h4>
+
+                        <button  className="button button-square button-tiny"><i className="fa fa-plus" ></i></button>  - Add image <br/>
+                        <button className="button button-square button-tiny"><i className="fa fa-plus" style={{color:'green'}}></i></button> - Add row/column <br/>
                     </div>
                     <div className="col-md-6">
                         <h4><b>Notes</b></h4>
+                        <i>Blue text is editable</i><br/>
                     </div>
                 </div>
             </div>

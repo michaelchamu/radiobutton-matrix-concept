@@ -26,8 +26,7 @@ server.route({
 
         var data = await knex.select('*').from('Questions');
 
-        var longestRow = _.map(data, 'label').reduce((a, b) => a.length > b.length ? a : b, '');
-        console.log(longestRow);
+
         datastore.data = data;
         //count rows
         datastore.rows = _.filter(data, {'type': 'row'})
@@ -73,12 +72,11 @@ server.route({
         }
     },
     handler: (request, h) => {
-        console.log(request.payload["image"])
         //write file to new location
         var result = [];
         for(var i = 0; i < request.payload["image"].length; i++) {
             result.push(request.payload["image"][i].hapi);
-            request.payload["image"][i].pipe(fs.createWriteStream(__dirname + "/images/" + request.payload["image"][i].hapi.filename))
+            request.payload["image"][i].pipe(fs.createWriteStream("./images/" + request.payload["image"][i].hapi.filename))
         }
         return 200;
     }
