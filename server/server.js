@@ -2,6 +2,7 @@ const Hapi = require('hapi');
 const _ = require('lodash');
 const fs = require('fs');
 
+//set up knex for database transactions
 var knex = require('knex')({
     client: 'sqlite3',
     connection: {
@@ -17,7 +18,7 @@ const server = Hapi.server({
 
 });
 
-
+//retrieve all saved rows and columns
 server.route({
     method: 'GET',
     path: '/',
@@ -25,7 +26,6 @@ server.route({
         var datastore = {};
 
         var data = await knex.select('*').from('Questions');
-
 
         datastore.data = data;
         //count rows
@@ -44,6 +44,7 @@ server.route({
 
 });
 
+//add row or column
 server.route({
     method: 'POST',
     path: '/',
@@ -61,6 +62,7 @@ server.route({
     }
 });
 
+//upload pictures
 server.route({
     method: 'POST',
     path: '/pics',
@@ -68,7 +70,7 @@ server.route({
         payload: {
             maxBytes: 1000 * 1000 * 5, // 5 Mb
             output: 'stream',
-            allow: 'multipart/form-data' // important
+            allow: 'multipart/form-data' // important to ensure API aCccepts file uploads
         }
     },
     handler: (request, h) => {
@@ -82,6 +84,7 @@ server.route({
     }
 });
 
+//change label name
 server.route({
     method: 'PATCH',
     path: '/',
@@ -98,6 +101,7 @@ server.route({
     }
 });
 
+//remove a row or column
 server.route({
     method: 'DELETE',
     path: '/',
@@ -116,7 +120,6 @@ server.route({
 
 
 const init = async () => {
-
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
 };
