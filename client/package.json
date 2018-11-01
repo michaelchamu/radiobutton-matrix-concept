@@ -7,7 +7,6 @@
     "node-sass": "^4.9.4",
     "randomstring": "^1.1.5",
     "react": "^16.5.2",
-    "react-bootstrap-xeditable": "^0.2.12",
     "react-dom": "^16.5.2",
     "react-ions": "^5.1.28",
     "react-scripts": "2.0.5",
