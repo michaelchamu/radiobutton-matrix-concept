@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import AddRow from "../components/AddRow/AddRow";
 import {
   updateData,
@@ -36,16 +37,15 @@ class Home extends Component {
   }
   //perfom a fetch to the API and set the starting values based on the returns from the API
   fetchItems = endpoint => {
-    fetch(endpoint)
-      .then(result => result.json())
+    axios
+      .get(endpoint)
       .then(result => {
-        console.log(result);
         this.setState({
-          rows: result.rows,
-          columns: result.columns,
-          totalImages: result.images,
-          longestRow: result.longestRow,
-          longestColumn: result.longestColumn
+          rows: result.data.rows,
+          columns: result.data.columns,
+          totalImages: result.data.images,
+          longestRow: result.data.longestRow,
+          longestColumn: result.data.longestColumn
         });
       })
       .catch(error => console.error(error));

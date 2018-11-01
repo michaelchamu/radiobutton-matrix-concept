@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82f864b9-f9a1-4477-8c71-92fc2f6e5b34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/services/Datafunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AddRow/AddRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Rows/Rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -58,7 +54,7 @@
           <entry key="css" value="3" />
           <entry key="gitignore" value="36" />
           <entry key="html" value="14" />
-          <entry key="js" value="12727" />
+          <entry key="js" value="12788" />
           <entry key="json" value="14" />
         </counts>
       </usages-collector>
@@ -67,7 +63,7 @@
           <entry key="CSS" value="3" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="12727" />
+          <entry key="JavaScript" value="12788" />
           <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
@@ -83,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="383">
+              <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -95,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/services/Datafunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="53" column="54" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
+            <state>
+              <caret selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -189,8 +185,8 @@
         <option value="$PROJECT_DIR$/client/src/components/Columns/AddColumn.js" />
         <option value="$PROJECT_DIR$/client/src/components/Rows/Rows.js" />
         <option value="$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js" />
-        <option value="$PROJECT_DIR$/client/src/Home/Home.js" />
         <option value="$PROJECT_DIR$/client/src/services/Datafunctions.js" />
+        <option value="$PROJECT_DIR$/client/src/Home/Home.js" />
       </list>
     </option>
   </component>
@@ -303,12 +299,12 @@
       <workItem from="1540837740090" duration="4304000" />
       <workItem from="1540899961440" duration="4480000" />
       <workItem from="1541067085711" duration="3865000" />
-      <workItem from="1541072485142" duration="10768000" />
+      <workItem from="1541072485142" duration="11212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86355000" />
+    <option name="totallyTimeSpent" value="86799000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -486,8 +482,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/services/Datafunctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="53" column="54" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
+        <state>
+          <caret selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -496,8 +492,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/Home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="383">
+          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
