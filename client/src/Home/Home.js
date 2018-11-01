@@ -50,18 +50,7 @@ class Home extends Component {
       })
       .catch(error => console.error(error));
   };
-  //If you want to perform any actions on radio button click
-  handleChange = idx => e => {
-    const { name, value } = e.target;
-    const rows = [...this.state.rows];
-    rows[idx] = {
-      [name]: value
-    };
 
-    this.setState({
-      rows
-    });
-  };
   //changing radio button label
   labelChange = (id, name, value) => {
     //get value and name from the label clicked then update the value
