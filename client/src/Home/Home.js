@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import AddRow from "../components/Rows/Rows";
+import ImageUpload from "../components/ImageUploader/ImageUpload";
+
 import {
   updateData,
   saveData,
@@ -137,14 +139,10 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <input
-          id="tinyimage"
-          type="file"
-          ref={ref => (this.upload = ref)}
-          style={{ display: "none" }}
-          onChange={this.onChangeFile.bind(this)}
+        <ImageUpload
+          onChangeFile={this.onChangeFile.bind(this)}
+          refs={ref => (this.upload = ref)}
         />
-
         <div className="row">
           <div className="col-md-12">
             <div className="col-md-7">
@@ -152,7 +150,7 @@ class Home extends Component {
                 columns={this.state.columns}
                 rows={this.state.rows}
                 changeCallback={this.handleSave}
-                labelChange={this.labelChange}
+                upload={this.upload}
                 handleRemoveSpecificColumn={this.handleRemoveSpecificColumn}
                 handleRemoveSpecificRow={this.handleRemoveSpecificRow}
               />
