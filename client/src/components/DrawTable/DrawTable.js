@@ -43,7 +43,7 @@ const DrawTable = props => {
                   <EditableTextField
                     value={props.columns[colx].label}
                     onUpdate={e =>
-                      this.labelChange(props.columns[colx].uniqueid, "column")
+                      props.labelChange(props.columns[colx].uniqueid, "column")
                     }
                   />
                 </th>
@@ -75,9 +75,10 @@ const DrawTable = props => {
                     <i className="fa fa-plus" />
                   </button>
                   <EditableTextField
-                    name="row"
+                    onUpdate={e =>
+                      props.labelChange(props.rows[idx].uniqueid, "row")
+                    }
                     value={props.rows[idx].label}
-                    onUpdate={props.labelChange}
                   />
                   <br />
                 </span>
@@ -89,7 +90,6 @@ const DrawTable = props => {
                     type="radio"
                     name="name"
                     value={props.rows[idx].name}
-                    //onChange={this.handleChange(idx)}
                     className="form-control"
                   />
                 </td>

@@ -60,6 +60,7 @@ class Home extends Component {
   //changing radio button label
   labelChange = (id, name, value) => {
     //get value and name from the label clicked then update the value
+    console.log({ id, name, value });
     let data = {};
     if (name === "row") {
       this.setState({ defaultRowName: value });
@@ -203,6 +204,7 @@ class Home extends Component {
               <DrawTable
                 columns={this.state.columns}
                 rows={this.state.rows}
+                labelChange={this.labelChange}
                 handleRemoveSpecificColumn={this.handleRemoveSpecificColumn}
                 handleRemoveSpecificRow={this.handleRemoveSpecificRow}
               />
