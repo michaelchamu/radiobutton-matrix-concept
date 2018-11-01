@@ -77,11 +77,13 @@ const DrawTable = props => {
                   >
                     <i className="fa fa-plus" />
                   </button>
-                  <EditableTextField
-                    onUpdate={e =>
-                      props.labelChange(props.rows[idx].uniqueid, "row")
-                    }
+                  <InlineEdit
+                    name="row"
                     value={props.rows[idx].label}
+                    changeCallback={event =>
+                      props.changeCallback(event, props.rows[idx].uniqueid)
+                    }
+                    loading={props.loading}
                   />
                   <br />
                 </span>
