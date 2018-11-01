@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import AddRow from "../components/Rows/Rows";
-import ImageUpload from "../components/ImageUploader/ImageUpload";
 
 import {
   updateData,
@@ -148,9 +147,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <ImageUpload
-          onChangeFile={this.onChangeFile.bind(this)}
-          refs={ref => (this.upload = ref)}
+        <input
+          id="tinyimage"
+          type="file"
+          ref={ref => (this.upload = ref)}
+          style={{ display: "none" }}
+          onChange={this.onChangeFile.bind(this)}
         />
         <div className="row">
           <div className="col-md-12">

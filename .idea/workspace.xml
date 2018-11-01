@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82f864b9-f9a1-4477-8c71-92fc2f6e5b34" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Columns/AddColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Columns/AddColumn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ImageUploader/ImageUpload.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/database/questions.db" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/questions.db" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -56,7 +57,7 @@
           <entry key="css" value="3" />
           <entry key="gitignore" value="36" />
           <entry key="html" value="36" />
-          <entry key="js" value="14130" />
+          <entry key="js" value="14131" />
           <entry key="json" value="14" />
         </counts>
       </usages-collector>
@@ -65,7 +66,7 @@
           <entry key="CSS" value="3" />
           <entry key="HTML" value="36" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="14130" />
+          <entry key="JavaScript" value="14131" />
           <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
@@ -87,33 +88,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1588">
-              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+            <state relative-caret-position="30">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
                 <element signature="n#!!block;n#onChangeFile#0;n#Home#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Columns/AddColumn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/ImageUploader/ImageUpload.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -176,8 +167,8 @@
       <find>AddRow</find>
       <find>axios</find>
       <find>upload</find>
-      <find>column</find>
       <find>AddColumn</find>
+      <find>column</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,9 +202,9 @@
         <option value="$PROJECT_DIR$/client/src/config/config.js" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
         <option value="$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Columns/AddColumn.js" />
         <option value="$PROJECT_DIR$/client/src/components/ImageUploader/ImageUpload.js" />
         <option value="$PROJECT_DIR$/client/src/Home/Home.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Columns/AddColumn.js" />
       </list>
     </option>
   </component>
@@ -338,12 +329,12 @@
       <workItem from="1540837740090" duration="4304000" />
       <workItem from="1540899961440" duration="4480000" />
       <workItem from="1541067085711" duration="3865000" />
-      <workItem from="1541072485142" duration="24923000" />
+      <workItem from="1541072485142" duration="25270000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100510000" />
+    <option name="totallyTimeSpent" value="100857000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -529,13 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/ImageUploader/ImageUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -546,21 +530,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/Home/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1588">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#onChangeFile#0;n#Home#0" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/client/src/components/ImageUploader/ImageUpload.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Columns/AddColumn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/Home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+          <folding>
+            <element signature="n#!!block;n#onChangeFile#0;n#Home#0" />
+          </folding>
         </state>
       </provider>
     </entry>
