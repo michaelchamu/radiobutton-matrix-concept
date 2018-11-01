@@ -35,7 +35,6 @@ const DrawTable = props => {
                   <i className="fa fa-plus" />
                 </button>
                 <br />
-                {props.columns[colx].uniqueid}
                 <EditableTextField
                   value={props.columns[colx].label}
                   onUpdate={e =>

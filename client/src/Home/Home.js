@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AddRow from "../components/AddRow/AddRow";
 import axios from "axios";
 import randomstring from "randomstring";
+import SummaryBlock from "../components/Summary/Summary";
 import { EditableTextField } from "react-bootstrap-xeditable";
 import { API_URL } from "../config/config";
 import DrawTable from "../components/DrawTable/DrawTable";
@@ -225,15 +226,13 @@ class Home extends Component {
               <h5>
                 <i>Summary</i>
               </h5>
-              Number of rows {this.state.rows.length}
-              <br />
-              Number of columns {this.state.columns.length}
-              <br />
-              Number of images uploaded {this.state.totalImages}
-              <br />
-              Longest row label: {this.state.longestRow}
-              <br />
-              Longest column label: {this.state.longestColumn}
+              <SummaryBlock
+                rows={this.state.rows}
+                columns={this.state.columns}
+                totalImages={this.state.totalImages}
+                longestRow={this.state.longestRow}
+                longestColumn={this.state.longestColumn}
+              />
             </div>
           </div>
         </div>
@@ -248,7 +247,7 @@ class Home extends Component {
             - Add image <br />
             <button className="button button-square button-tiny">
               <i className="fa fa-plus" style={{ color: "green" }} />
-            </button>{" "}
+            </button>
             - Add row/column <br />
           </div>
           <div className="col-md-6">
