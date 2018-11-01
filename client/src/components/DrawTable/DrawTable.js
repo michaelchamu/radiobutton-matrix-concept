@@ -1,5 +1,4 @@
 import React from "react";
-import { EditableTextField } from "react-bootstrap-xeditable";
 import InlineEdit from "react-ions/lib/components/InlineEdit";
 
 const DrawTable = props => {
