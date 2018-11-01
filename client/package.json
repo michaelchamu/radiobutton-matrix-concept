@@ -8,6 +8,7 @@
     "react": "^16.5.2",
     "react-bootstrap-xeditable": "^0.2.12",
     "react-dom": "^16.5.2",
+    "react-ions": "^5.1.28",
     "react-scripts": "2.0.5"
   },
   "scripts": {
@@ -22,6 +23,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

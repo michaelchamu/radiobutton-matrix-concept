@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import AddRow from "../components/AddRow/AddRow";
+import AddRow from "../components/Rows/Rows";
 import {
   updateData,
   saveData,
@@ -19,12 +19,14 @@ let formData = new FormData();
 
 class Home extends Component {
   state = {
+    loading: false,
     columns: [{}],
     rows: [{}],
     formFields: {},
     defaultColumnName: "Col",
     defaultRowName: "Row",
     uniquekey: "",
+    value: "",
     imagePresent: false,
     totalImages: 0,
     longestRow: null,
@@ -51,27 +53,25 @@ class Home extends Component {
       .catch(error => console.error(error));
   };
 
-  //changing radio button label
-  labelChange = (id, name, value) => {
-    //get value and name from the label clicked then update the value
-    console.log({ id, name, value });
+  handleSave = (event, id) => {
     let data = {};
-    if (name === "row") {
-      this.setState({ defaultRowName: value });
-
-      data.label = value;
-      data.type = "row";
-      //  this.updateData(data);
-      console.log(this.state.defaultRowName);
-    } else {
-      this.setState({ defaultColumnName: value });
-
-      data.label = value;
-      data.type = "column";
-      // this.updateData(data);
+    if (event.target.name === "column" || event.target.name === "row") {
+      data.label = event.target.value;
+      data.uniqueid = id;
+      if (event.target.name === "row") {
+        this.setState({ defaultRowName: event.target.name, loading: true });
+        data.type = "row";
+      } else {
+        this.setState({ defaultColumnName: event.target.name, loading: true });
+        data.type = "column";
+      }
+      setTimeout(() => {
+        this.setState({ loading: false });
+      }, 3000);
     }
-    //get image is exists
-    //send data to database
+    console.log(data);
+
+    //  this.updateData(data);
   };
 
   onChangeFile(event) {
@@ -152,6 +152,7 @@ class Home extends Component {
               <DrawTable
                 columns={this.state.columns}
                 rows={this.state.rows}
+                changeCallback={this.handleSave}
                 labelChange={this.labelChange}
                 handleRemoveSpecificColumn={this.handleRemoveSpecificColumn}
                 handleRemoveSpecificRow={this.handleRemoveSpecificRow}

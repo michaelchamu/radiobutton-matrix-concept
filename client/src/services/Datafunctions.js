@@ -5,7 +5,6 @@ const saveData = formFields => {
   axios
     .post(API_URL, formFields)
     .then(response => {
-      console.log(response);
       //Perform action based on response
     })
     .catch(error => {
@@ -17,23 +16,17 @@ const saveData = formFields => {
 const updateData = fields => {
   axios
     .patch(API_URL, fields)
-    .then(response => {
-      console.log(response);
-    })
-    .catch(error => {
-      console.log(error);
-    });
+    .then(response => {})
+    .catch(error => {});
 };
 
 const deleteData = key => {
   axios
     .delete(API_URL, { data: { uniquekey: key } })
     .then(response => {
-      console.log(response);
-      this.fetchItems(API_URL);
+      //handle result from API
     })
     .catch(error => {
-      console.log(error);
       this.fetchItems(API_URL);
     });
 };

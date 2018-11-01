@@ -1,5 +1,6 @@
 import React from "react";
 import { EditableTextField } from "react-bootstrap-xeditable";
+import InlineEdit from "react-ions/lib/components/InlineEdit";
 
 const DrawTable = props => {
   return (
@@ -40,11 +41,13 @@ const DrawTable = props => {
                     <i className="fa fa-plus" />
                   </button>
                   <br />
-                  <EditableTextField
+                  <InlineEdit
+                    name="column"
                     value={props.columns[colx].label}
-                    onUpdate={e =>
-                      props.labelChange(props.columns[colx].uniqueid, "column")
+                    changeCallback={event =>
+                      props.changeCallback(event, props.columns[colx].uniqueid)
                     }
+                    loading={props.loading}
                   />
                 </th>
               ))}
