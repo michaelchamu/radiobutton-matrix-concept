@@ -57,7 +57,7 @@ class Home extends Component {
     let data = {};
     if (event.target.name === "column" || event.target.name === "row") {
       data.label = event.target.value;
-      data.uniqueid = id;
+      data.uniquekey = id;
       if (event.target.name === "row") {
         this.setState({ defaultRowName: event.target.name, loading: true });
         data.type = "row";
@@ -70,8 +70,7 @@ class Home extends Component {
       }, 3000);
     }
     console.log(data);
-
-    //  this.updateData(data);
+    updateData(data);
   };
 
   onChangeFile(event) {

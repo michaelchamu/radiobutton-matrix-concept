@@ -5,9 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/Datafunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/Datafunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/config/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/database/questions.db" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/questions.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,7 +39,7 @@
           <entry key="gitignore" value="3" />
           <entry key="html" value="3" />
           <entry key="jpg" value="4" />
-          <entry key="js" value="25" />
+          <entry key="js" value="28" />
           <entry key="json" value="11" />
           <entry key="sqlite3" value="1" />
         </counts>
@@ -50,7 +50,7 @@
           <entry key="HTML" value="3" />
           <entry key="Image" value="4" />
           <entry key="JSON" value="11" />
-          <entry key="JavaScript" value="25" />
+          <entry key="JavaScript" value="28" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -59,7 +59,7 @@
           <entry key="css" value="3" />
           <entry key="gitignore" value="36" />
           <entry key="html" value="14" />
-          <entry key="js" value="13683" />
+          <entry key="js" value="13694" />
           <entry key="json" value="14" />
         </counts>
       </usages-collector>
@@ -68,7 +68,7 @@
           <entry key="CSS" value="3" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="13683" />
+          <entry key="JavaScript" value="13694" />
           <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
@@ -82,12 +82,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="122" column="16" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/serviceWorker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="-158">
+              <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
                 <element signature="n#!!block;n#onChangeFile#0;n#Home#0" />
                 <element signature="e#2842#3092#0" />
                 <element signature="e#3121#3416#0" />
@@ -99,10 +118,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/config/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/services/Datafunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state relative-caret-position="255">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -110,11 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="675">
+              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -167,7 +195,6 @@
         <option value="$PROJECT_DIR$/src/config/config.js" />
         <option value="$PROJECT_DIR$/src/Home/Home.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/.eslintrc.json" />
         <option value="$PROJECT_DIR$/client/package.json" />
@@ -176,9 +203,11 @@
         <option value="$PROJECT_DIR$/client/src/components/Summary/Summary.js" />
         <option value="$PROJECT_DIR$/client/src/components/Columns/AddColumn.js" />
         <option value="$PROJECT_DIR$/client/src/components/Rows/Rows.js" />
-        <option value="$PROJECT_DIR$/client/src/Home/Home.js" />
         <option value="$PROJECT_DIR$/client/src/services/Datafunctions.js" />
         <option value="$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js" />
+        <option value="$PROJECT_DIR$/client/src/Home/Home.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/client/src/config/config.js" />
       </list>
     </option>
   </component>
@@ -254,7 +283,19 @@
               <item name="question-editor" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="question-editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="question-editor" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="question-editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="question-editor" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -313,12 +354,12 @@
       <workItem from="1540837740090" duration="4304000" />
       <workItem from="1540899961440" duration="4480000" />
       <workItem from="1541067085711" duration="3865000" />
-      <workItem from="1541072485142" duration="19713000" />
+      <workItem from="1541072485142" duration="21739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95300000" />
+    <option name="totallyTimeSpent" value="97326000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -333,7 +374,7 @@
     <frame x="-1920" y="-212" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14586625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14586625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -347,7 +388,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32970297" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32970297" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -404,13 +445,6 @@
     <entry file="file://$PROJECT_DIR$/server/images/2ccwghx.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/DeleteRow/DeleteSpecificRow.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -460,9 +494,6 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/Summary/Legend.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/config/config.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/SummaryAndLegend/SummaryAndLegend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -484,12 +515,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/services/Datafunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/Home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="-158">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
             <element signature="n#!!block;n#onChangeFile#0;n#Home#0" />
             <element signature="e#2842#3092#0" />
             <element signature="e#3121#3416#0" />
@@ -499,22 +549,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/services/Datafunctions.js">
+    <entry file="file://$PROJECT_DIR$/client/src/config/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/DrawTable/DrawTable.js">
+    <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        <state relative-caret-position="165">
+          <caret line="122" column="16" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/serviceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
