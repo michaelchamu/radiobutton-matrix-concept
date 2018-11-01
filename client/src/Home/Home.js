@@ -25,8 +25,8 @@ class Home extends Component {
     columns: [{}],
     rows: [{}],
     formFields: {},
-    defaultColumnName: "Col",
-    defaultRowName: "Row",
+    defaultColumnName: "",
+    defaultRowName: "",
     uniquekey: "",
     value: "",
     imagePresent: false,
@@ -73,6 +73,7 @@ class Home extends Component {
     }
     console.log(data);
     updateData(data);
+    this.fetchItems(API_URL);
   };
 
   onChangeFile(event) {
@@ -104,6 +105,8 @@ class Home extends Component {
       label: this.state.defaultRowName,
       uniquekey: item.name
     });
+
+    this.fetchItems(API_URL);
   };
 
   handleAddColumn = () => {
@@ -119,6 +122,8 @@ class Home extends Component {
       label: this.state.defaultColumnName,
       uniquekey: item.name
     });
+
+    this.fetchItems(API_URL);
   };
 
   handleRemoveSpecificRow = (idx, key) => () => {
@@ -126,6 +131,8 @@ class Home extends Component {
     rows.splice(idx, 1);
     this.setState({ rows });
     deleteData(key);
+
+    this.fetchItems(API_URL);
   };
 
   handleRemoveSpecificColumn = (idx, key) => () => {
@@ -134,6 +141,8 @@ class Home extends Component {
     columns.splice(idx, 1);
     this.setState({ columns });
     deleteData(key);
+
+    this.fetchItems(API_URL);
   };
 
   render() {
