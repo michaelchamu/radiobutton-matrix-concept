@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import AddRow from "../components/AddRow/AddRow";
 import axios from "axios";
 import randomstring from "randomstring";
-import SummaryBlock from "../components/Summary/Summary";
-import { EditableTextField } from "react-bootstrap-xeditable";
+import {
+  SummaryBlock,
+  LegendBlock
+} from "../components/SummaryAndLegend/SummaryAndLegend";
 import { API_URL } from "../config/config";
 import DrawTable from "../components/DrawTable/DrawTable";
+import AddColumn from "../components/Columns/AddColumn";
 let formData = new FormData();
 
 class Home extends Component {
@@ -70,7 +73,6 @@ class Home extends Component {
 
       data.label = value;
       data.type = "column";
-      console.log(this.state.defaultColumnName);
       // this.updateData(data);
     }
     //get image is exists
@@ -198,10 +200,6 @@ class Home extends Component {
         <div className="row">
           <div className="col-md-12">
             <div className="col-md-7">
-              <h4>
-                <b>Question Edition View</b>
-              </h4>
-              <i>Title of question</i>
               <DrawTable
                 columns={this.state.columns}
                 rows={this.state.rows}
@@ -210,22 +208,11 @@ class Home extends Component {
               />
               <AddRow onClick={this.handleAddRow} />
             </div>
+
             <div className="col-md-1">
-              <button
-                onClick={this.handleAddColumn}
-                className="button button-square button-tiny"
-              >
-                <i className="fa fa-plus" style={{ color: "green" }} />
-              </button>
-              <br />
+              <AddColumn onClick={this.handleAddColumn} />
             </div>
             <div className="col-md-4">
-              <h4>
-                <b>Question Summary View</b>
-              </h4>
-              <h5>
-                <i>Summary</i>
-              </h5>
               <SummaryBlock
                 rows={this.state.rows}
                 columns={this.state.columns}
@@ -236,28 +223,8 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-6">
-            <h4>
-              <b>Legend</b>
-            </h4>
-            <button className="button button-square button-tiny">
-              <i className="fa fa-plus" />
-            </button>{" "}
-            - Add image <br />
-            <button className="button button-square button-tiny">
-              <i className="fa fa-plus" style={{ color: "green" }} />
-            </button>
-            - Add row/column <br />
-          </div>
-          <div className="col-md-6">
-            <h4>
-              <b>Notes</b>
-            </h4>
-            <i>Blue text is editable</i>
-            <br />
-          </div>
-        </div>
+        <div className="row" />
+        <LegendBlock />
       </div>
     );
   }

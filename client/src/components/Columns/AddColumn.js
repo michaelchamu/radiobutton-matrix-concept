@@ -1,9 +1,9 @@
 import React from "react";
 
-const AddRow = props => {
+const AddColumn = props => {
   return (
     <button
-      onClick={props.onClick}
+      onClick={props.handleAddColumn}
       className="button button-square button-tiny"
     >
       <i className="fa fa-plus" style={{ color: "green" }} />
@@ -11,4 +11,4 @@ const AddRow = props => {
   );
 };
 
-export default AddRow;
+export default AddColumn;
