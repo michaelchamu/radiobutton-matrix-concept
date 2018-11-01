@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import AddRow from "../components/AddRow/AddRow";
-import axios from "axios";
+import {
+  updateData,
+  saveData,
+  deleteData,
+  uploadImage
+} from "../services/Datafunctions";
 import randomstring from "randomstring";
 import {
   SummaryBlock,
@@ -93,16 +98,7 @@ class Home extends Component {
     //get id
     //post to update
     formData.append("image", file);
-    axios
-      .post(`${API_URL}/pics`, formData)
-      .then(result => {
-        console.log(result);
-        //Perform action based on response
-      })
-      .catch(error => {
-        console.log(error);
-        //Perform action based on error
-      });
+    uploadImage(formData);
   }
 
   handleAddRow = () => {
@@ -113,7 +109,7 @@ class Home extends Component {
     this.setState({
       rows: [...this.state.rows, item]
     });
-    this.saveData({
+    saveData({
       type: "row",
       label: this.state.defaultRowName,
       uniquekey: item.name
@@ -128,55 +124,18 @@ class Home extends Component {
       columns: [...this.state.columns, item],
       rows: [...this.state.rows]
     });
-    this.saveData({
+    saveData({
       type: "column",
       label: this.state.defaultColumnName,
       uniquekey: item.name
     });
   };
 
-  saveData(formFields) {
-    axios
-      .post(API_URL, formFields)
-      .then(response => {
-        console.log(response);
-        //Perform action based on response
-      })
-      .catch(error => {
-        console.log(error);
-        //Perform action based on error
-      });
-  }
-
-  updateData(fields) {
-    axios
-      .patch(API_URL, fields)
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
-  deleteData(key) {
-    axios
-      .delete(API_URL, { data: { uniquekey: key } })
-      .then(response => {
-        console.log(response);
-        this.fetchItems(API_URL);
-      })
-      .catch(error => {
-        console.log(error);
-        this.fetchItems(API_URL);
-      });
-  }
-
   handleRemoveSpecificRow = (idx, key) => () => {
     const rows = [...this.state.rows];
     rows.splice(idx, 1);
     this.setState({ rows });
-    this.deleteData(key);
+    deleteData(key);
   };
 
   handleRemoveSpecificColumn = (idx, key) => () => {
@@ -184,7 +143,7 @@ class Home extends Component {
     const columns = [...this.state.columns];
     columns.splice(idx, 1);
     this.setState({ columns });
-    this.deleteData(key);
+    deleteData(key);
   };
 
   render() {
