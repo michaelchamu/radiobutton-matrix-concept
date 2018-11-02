@@ -1,6 +1,6 @@
 import React from "react";
 import InlineEdit from "react-ions/lib/components/InlineEdit";
-
+import styles from "react-ions/src/components/InlineEdit/style.scss";
 const DrawTable = props => {
   return (
     <div>

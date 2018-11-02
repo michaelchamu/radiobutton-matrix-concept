@@ -3,7 +3,7 @@ const _ = require("lodash");
 const fs = require("fs");
 
 //set up knex for database transactions
-var knex = require("knex")({
+let knex = require("knex")({
   client: "sqlite3",
   connection: {
     filename: "./database/questions.db"
@@ -22,9 +22,9 @@ server.route({
   method: "GET",
   path: "/matrix",
   handler: async () => {
-    var datastore = {};
+    let datastore = {};
 
-    var data = await knex.select("*").from("Questions");
+    let data = await knex.select("*").from("Questions");
 
     datastore.data = data;
     //get all rows in result set
@@ -83,8 +83,8 @@ server.route({
   },
   handler: (request, h) => {
     //write file to new location
-    var result = [];
-    for (var i = 0; i < request.payload["image"].length; i++) {
+    let result = [];
+    for (let i = 0; i < request.payload["image"].length; i++) {
       result.push(request.payload["image"][i].hapi);
       request.payload["image"][i].pipe(
         fs.createWriteStream(

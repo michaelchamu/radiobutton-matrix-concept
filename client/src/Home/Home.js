@@ -70,7 +70,6 @@ class Home extends Component {
         this.setState({ loading: false });
       }, 3000);
     }
-    console.log(data);
     updateData(data);
     this.fetchItems(API_URL);
   };
@@ -79,7 +78,7 @@ class Home extends Component {
     event.stopPropagation();
     //stop browser defalt event
     event.preventDefault();
-    var file = event.target.files[0];
+    let file = event.target.files[0];
     console.log(event.target);
     console.log(this.state.defaultRowName);
     //GET Image
@@ -135,7 +134,6 @@ class Home extends Component {
   };
 
   handleRemoveSpecificColumn = (idx, key) => () => {
-    console.log(key);
     const columns = [...this.state.columns];
     columns.splice(idx, 1);
     this.setState({ columns });
