@@ -22,29 +22,33 @@ server.route({
   method: "GET",
   path: "/matrix",
   handler: async () => {
-    let datastore = {};
-
+    let dataStore = {};
     let data = await knex.select("*").from("Questions");
 
-    datastore.data = data;
-    //get all rows in result set
-    datastore.rows = _.filter(data, { type: "row" });
-    //get all columns in result set
-    datastore.columns = _.filter(data, { type: "column" });
-    //get the row with the longest label in the rows result set
-    datastore.longestRow = _.map(datastore.rows, "label").reduce(
-      (a, b) => (a.length > b.length ? a : b),
-      ""
-    ).length;
-    //get the column with the longest label in the columsn result set
-    datastore.longestColumn = _.map(datastore.columns, "label").reduce(
-      (a, b) => (a.length > b.length ? a : b),
-      ""
-    ).length;
-    //count the total number of images saved in the database
-    datastore.images = _.sumBy(data, ({ image }) => Number(image !== null));
-    //return object with all the summaries to the client side
-    return datastore;
+    if (!data || data.length === 0) {
+      //there is no data send 404 to client
+      return 404;
+    } else {
+      dataStore.data = data;
+      //get all rows in result set
+      dataStore.rows = _.filter(data, { type: "row" });
+      //get all columns in result set
+      dataStore.columns = _.filter(data, { type: "column" });
+      //get the row with the longest label in the rows result set
+      dataStore.longestRow = _.map(dataStore.rows, "label").reduce(
+        (a, b) => (a.length > b.length ? a : b),
+        ""
+      ).length;
+      //get the column with the longest label in the columsn result set
+      dataStore.longestColumn = _.map(dataStore.columns, "label").reduce(
+        (a, b) => (a.length > b.length ? a : b),
+        ""
+      ).length;
+      //count the total number of images saved in the database
+      dataStore.images = _.sumBy(data, ({ image }) => Number(image !== null));
+      //return object with all the summaries to the client side
+      return { statusCode: 200, dataStore };
+    }
   }
 });
 
@@ -53,7 +57,7 @@ server.route({
   method: "POST",
   path: "/matrix",
   //request is the data from client side while h is the response that can be customised to give feedback to the client
-  handler: (request, h) => {
+  handler: (request, reply) => {
     //add a single record to the questions table, can be a row or a column becuase these are not added simultenously
     knex("Questions")
       .insert({
@@ -63,6 +67,7 @@ server.route({
         image: null
       })
       .then(result => {
+        //check error code then rsend that
         return result;
       });
     return 200;
