@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import randomstring from "randomstring";
-import { toast } from 'react-toastify';
+import Notifications, {notify} from 'react-notify-toast';
 import {
   updateData,
   saveData,
@@ -43,7 +43,7 @@ class Home extends Component {
     axios
       .get(endpoint)
       .then(result => {
-        toast.success('Success');
+        notify.show('Data successfully retrieved!', 'success');
         this.setState({
           rows: result.data.dataStore.rows,
           columns: result.data.dataStore.columns,
@@ -53,7 +53,7 @@ class Home extends Component {
         });
       })
       .catch((error) => {
-        toast.error('Could not get data');
+         notify.show('Data retrieval failed!', 'error');
       });
   };
 
@@ -103,10 +103,16 @@ class Home extends Component {
     this.setState({
       rows: [...this.state.rows, item]
     });
-    saveData({
+   saveData({
       type: "row",
       label: this.state.defaultRowName,
       uniqueid: item.name
+    }).then((result) => {
+      if(result.data.statusCode === 201) {
+        notify.show(`Row successfully added!`, 'success');
+      } else {
+        notify.show(`Row successfully added!`, 'error');
+      }
     });
 
     this.fetchItems(API_URL);
@@ -150,6 +156,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+      <Notifications />
         <input
           id="tinyimage"
           type="file"

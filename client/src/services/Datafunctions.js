@@ -13,20 +13,23 @@ const getData = () => {
 };
 
 const saveData = formFields => {
-  axios
+
+  let promise = new Promise((resolve, reject) => {
+    axios
     .post(API_URL, formFields)
     .then(response => {
       //Perform action based on response
-      console.log(response)
+      resolve(response);
     })
     .catch(error => {
-     return {statusCode: 500, message: error}
+    reject({statusCode: 500, message: error});
       //Perform action based on error
     });
+  })
+  return promise;
 };
 
 const updateData = fields => {
-  console.log(fields)
   axios
     .patch(`${API_URL}/${fields.uniqueid}`, fields)
     .then(response => {
