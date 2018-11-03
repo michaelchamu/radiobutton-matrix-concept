@@ -114,7 +114,6 @@ class Home extends Component {
         notify.show(`Row successfully added!`, 'error');
       }
     });
-
     this.fetchItems(API_URL);
   };
 
@@ -130,6 +129,12 @@ class Home extends Component {
       type: "column",
       label: this.state.defaultColumnName,
       uniqueid: item.name
+    }).then((result) => {
+       if(result.data.statusCode === 201) {
+        notify.show(`Column successfully added!`, 'success');
+      } else {
+        notify.show(`Column successfully added!`, 'error');
+      }
     });
 
     this.fetchItems(API_URL);
