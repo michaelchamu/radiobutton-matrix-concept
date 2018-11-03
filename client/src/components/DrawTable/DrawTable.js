@@ -33,7 +33,7 @@ const DrawTable = props => {
 
                   <button
                     onClick={() => {
-                      props.upload.click(props.columns[colx].uniqueid);
+                      props.upload.click();
                     }}
                     className="button button-square button-tiny"
                   >
@@ -43,7 +43,7 @@ const DrawTable = props => {
                   <InlineEdit
                     name="column"
                     value={props.columns[colx].label}
-                    changeCallback={event =>
+                    changeCallback={(event) =>
                       props.changeCallback(event, props.columns[colx].uniqueid)
                     }
                     loading={props.loading}

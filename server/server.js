@@ -1,13 +1,6 @@
 const Hapi = require("hapi");
-const _ = require("lodash");
-const fs = require("fs");
-const { mongoose } = require('./db/db.config');
 const routes = require('./routes/matrix.routes');
-let { Matrix } = require('./Models/Matrix.model');
-
-//set up knex for database transactions
-
-
+const {mongoose} = require('./db/db.config'); 
 const server = Hapi.server({
   port: 3500,
   host: "localhost",
@@ -22,7 +15,6 @@ const init = async () => {
 };
 
 process.on("unhandledRejection", err => {
-  console.log(err);
   process.exit(1);
 });
 

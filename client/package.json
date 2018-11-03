@@ -10,6 +10,7 @@
     "react-dom": "^16.5.2",
     "react-ions": "^5.1.28",
     "react-scripts": "2.0.5",
+    "react-toastify": "^4.4.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1"
   },

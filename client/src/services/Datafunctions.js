@@ -1,47 +1,70 @@
 import axios from "axios";
 import { API_URL } from "../config/config";
 
+const getData = () => {
+      axios
+      .get(API_URL)
+      .then(result => {
+        return result;
+      })
+      .catch(error => {
+        return {statusCode: 500, message: error}
+      });
+};
+
 const saveData = formFields => {
   axios
     .post(API_URL, formFields)
     .then(response => {
       //Perform action based on response
+      console.log(response)
     })
     .catch(error => {
-      console.log(error);
+     return {statusCode: 500, message: error}
       //Perform action based on error
     });
 };
 
 const updateData = fields => {
+  console.log(fields)
   axios
-    .patch(API_URL, fields)
-    .then(response => {})
-    .catch(error => {});
+    .patch(`${API_URL}/${fields.uniqueid}`, fields)
+    .then(response => {
+      console.log(response)
+      return response;
+    })
+    .catch(error => {
+      console.log(error)
+      return {statusCode: 500, message: error, notification: 'error'}
+    });
 };
 
 const deleteData = key => {
   axios
-    .delete(API_URL, { data: { uniquekey: key } })
+    .delete(`${API_URL}/${key}`)
     .then(response => {
       //handle result from API
+      return response;
     })
     .catch(error => {
-      this.fetchItems(API_URL);
+      return {statusCode: 500, message: error, notification: 'error'}
     });
 };
 
 const uploadImage = formData => {
+  console.log(formData);
   axios
     .post(`${API_URL}/pics`, formData)
     .then(result => {
-      console.log(result);
+      console.log(result)
+      return result;
       //Perform action based on response
     })
     .catch(error => {
-      console.log(error);
+      console.log(error)
+      return {statusCode: 500, message: error, notification: 'error'}
       //Perform action based on error
     });
 };
 
-export { saveData, updateData, deleteData, uploadImage };
+export { saveData, updateData, deleteData, uploadImage, getData };

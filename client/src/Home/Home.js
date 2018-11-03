@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import axios from "axios";
-import AddRow from "../components/Rows/Rows";
-
+import randomstring from "randomstring";
+import { toast } from 'react-toastify';
 import {
   updateData,
   saveData,
   deleteData,
   uploadImage
 } from "../services/Datafunctions";
-import randomstring from "randomstring";
 import {
   SummaryBlock,
   LegendBlock
 } from "../components/SummaryAndLegend/SummaryAndLegend";
-import { API_URL } from "../config/config";
 import DrawTable from "../components/DrawTable/DrawTable";
 import AddColumn from "../components/Columns/AddColumn";
+import AddRow from "../components/Rows/Rows";
+import axios from "axios";
+import { API_URL } from "../config/config";
 let formData = new FormData();
 
 class Home extends Component {
@@ -43,22 +43,26 @@ class Home extends Component {
     axios
       .get(endpoint)
       .then(result => {
+        toast.success('Success');
         this.setState({
-          rows: result.data.rows,
-          columns: result.data.columns,
-          totalImages: result.data.images,
-          longestRow: result.data.longestRow,
-          longestColumn: result.data.longestColumn
+          rows: result.data.dataStore.rows,
+          columns: result.data.dataStore.columns,
+          totalImages: result.data.dataStore.images,
+          longestRow: result.data.dataStore.longestRow,
+          longestColumn: result.data.dataStore.longestColumn
         });
       })
-      .catch(error => console.error(error));
+      .catch((error) => {
+        toast.error('Could not get data');
+      });
   };
+
 
   handleSave = (event, id) => {
     let data = {};
     if (event.target.name === "column" || event.target.name === "row") {
       data.label = event.target.value;
-      data.uniquekey = id;
+      data.uniqueid = id;
       if (event.target.name === "row") {
         this.setState({ defaultRowName: event.target.name, loading: true });
         data.type = "row";
@@ -79,8 +83,7 @@ class Home extends Component {
     //stop browser defalt event
     event.preventDefault();
     let file = event.target.files[0];
-    console.log(event.target);
-    console.log(this.state.defaultRowName);
+    console.log(event.target.files);
     //GET Image
     //get type
     //get name
@@ -88,6 +91,8 @@ class Home extends Component {
     //post to update
     formData.append("image", file);
     uploadImage(formData);
+
+    this.fetchItems(API_URL);
   }
 
   handleAddRow = () => {
@@ -101,7 +106,7 @@ class Home extends Component {
     saveData({
       type: "row",
       label: this.state.defaultRowName,
-      uniquekey: item.name
+      uniqueid: item.name
     });
 
     this.fetchItems(API_URL);
@@ -118,7 +123,7 @@ class Home extends Component {
     saveData({
       type: "column",
       label: this.state.defaultColumnName,
-      uniquekey: item.name
+      uniqueid: item.name
     });
 
     this.fetchItems(API_URL);
