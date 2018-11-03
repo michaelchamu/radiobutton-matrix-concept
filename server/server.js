@@ -16,30 +16,6 @@ const server = Hapi.server({
 
 server.route(routes);
 
-
-
-
-// //remove a row or column
-// server.route({
-//   method: "DELETE",
-//   path: "/matrix",
-//   handler: (request, h) => {
-//     console.log(request.payload);
-
-//     knex("Questions")
-//       .where({ uniqueid: request.payload.uniquekey })
-//       .del()
-//       .then((err, result) => {
-//         if(err){
-//                   return {statusCode: 400, message: err};
-//         } else {
-//           return {statusCode: 200, result}
-//         }
-//       });
-//     return 200;
-//   }
-// });
-
 const init = async () => {
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
