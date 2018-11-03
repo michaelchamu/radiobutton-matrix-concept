@@ -42,7 +42,7 @@ const DrawTable = props => {
                   <br />
                   <InlineEdit
                     name="column"
-                    value={props.columns[colx].label}
+                    value={'' ? 'col': props.columns[colx].label}
                     changeCallback={(event) =>
                       props.changeCallback(event, props.columns[colx].uniqueid)
                     }
@@ -78,7 +78,7 @@ const DrawTable = props => {
                   </button>
                   <InlineEdit
                     name="row"
-                    value={props.rows[idx].label}
+                    value={'' ? 'row': props.rows[idx].label}
                     changeCallback={event =>
                       props.changeCallback(event, props.rows[idx].uniqueid)
                     }
