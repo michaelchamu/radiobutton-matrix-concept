@@ -30,16 +30,18 @@ const saveData = formFields => {
 };
 
 const updateData = fields => {
-  axios
+  let promise = new Promise((resolve, reject) => {
+    axios
     .patch(`${API_URL}/${fields.uniqueid}`, fields)
     .then(response => {
       console.log(response)
-      return response;
-    })
+       resolve(response);
+     })
     .catch(error => {
-      console.log(error)
-      return {statusCode: 500, message: error, notification: 'error'}
+       reject({statusCode: 500, message: error});
     });
+  })
+  return promise;
 };
 
 const deleteData = key => {

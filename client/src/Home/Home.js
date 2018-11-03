@@ -74,7 +74,13 @@ class Home extends Component {
         this.setState({ loading: false });
       }, 3000);
     }
-    updateData(data);
+    updateData(data).then((result) => {
+      if(result.data.statusCode === 201) {
+        notify.show(`${data.type} successfully updated!`, 'success');
+      } else {
+        notify.show(`${data.type} failed to update!`, 'error');
+      }
+    });
     this.fetchItems(API_URL);
   };
 
@@ -111,7 +117,7 @@ class Home extends Component {
       if(result.data.statusCode === 201) {
         notify.show(`Row successfully added!`, 'success');
       } else {
-        notify.show(`Row successfully added!`, 'error');
+        notify.show(`Row failed to add!`, 'error');
       }
     });
     this.fetchItems(API_URL);
@@ -133,7 +139,7 @@ class Home extends Component {
        if(result.data.statusCode === 201) {
         notify.show(`Column successfully added!`, 'success');
       } else {
-        notify.show(`Column successfully added!`, 'error');
+        notify.show(`Column failed to add!`, 'error');
       }
     });
 
