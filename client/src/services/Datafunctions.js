@@ -45,15 +45,19 @@ const updateData = fields => {
 };
 
 const deleteData = key => {
-  axios
+  console.log(key)
+  let promise = new Promise((resolve, reject) => {
+    axios
     .delete(`${API_URL}/${key}`)
     .then(response => {
       //handle result from API
-      return response;
+       resolve(response);
     })
     .catch(error => {
-      return {statusCode: 500, message: error, notification: 'error'}
+     reject({statusCode: 500, message: error, notification: 'error'});
     });
+  })
+  return promise;
 };
 
 const uploadImage = formData => {

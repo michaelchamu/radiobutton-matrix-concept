@@ -150,7 +150,15 @@ class Home extends Component {
     const rows = [...this.state.rows];
     rows.splice(idx, 1);
     this.setState({ rows });
-    deleteData(key);
+    deleteData(key).then((result) => {
+      
+      console.log(result.data.statusCode)
+       if(result.data.statusCode === 201) {
+        notify.show(`Row successfully deleted!`, 'success');
+      } else {
+        notify.show(`Row failed to delete!`, 'error');
+      }
+    });;
 
     this.fetchItems(API_URL);
   };
@@ -159,7 +167,14 @@ class Home extends Component {
     const columns = [...this.state.columns];
     columns.splice(idx, 1);
     this.setState({ columns });
-    deleteData(key);
+    deleteData(key).then((result) => {
+      console.log(result.data.statusCode)
+       if(result.data.statusCode === 201) {
+        notify.show(`Column successfully deleted!`, 'success');
+      } else {
+        notify.show(`Column failed to delete!`, 'error');
+      }
+    });;
 
     this.fetchItems(API_URL);
   };
