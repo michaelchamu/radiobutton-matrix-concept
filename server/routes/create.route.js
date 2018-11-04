@@ -39,17 +39,26 @@ module.exports = [
         },
         handler: async (request, h) => {
             //write file to new location
-
             const file = await request.payload.image;
             let promise = new Promise((resolve, reject) => {
-                const stream = fs.createWriteStream(path.join(__dirname, '..', 'images', file.hapi.filename));
+                const stream = fs.createWriteStream(path.join(__dirname, '..', 'images', request.payload.filename));
                 file.on('error', err => reply(err));
                 file.pipe(stream);
                 file.on('end', err => {
                     if (err) {
                         reject({ statusCode: 400, message: 'image upload failed' })
                     } else {
-                        resolve({ statusCode: 201, message: 'image uploaded' })
+                        //update row or column by ID
+                        Matrix.findOneAndUpdate({'uniqueid': request.payload.id, 'type': request.payload.type}, {$set: {
+                            'image': request.payload.filename
+                        }}).then((record) => {
+                            if(!record){
+                                resolve({statusCode: 404})}
+                            else{
+                                 resolve({statusCode:201})}
+                        }).catch((err) => {
+                            reject({statusCode: 400, message: err});
+                    })
                     }
                 });
             })

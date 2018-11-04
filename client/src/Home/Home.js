@@ -84,19 +84,31 @@ class Home extends Component {
     this.fetchItems(API_URL);
   };
 
-  onChangeFile(event) {
+  callback = (id, type, event) => {
+    let file = event.target.value[0];
+    formData.append("image", file);
+    formData.append('id', id);
+    formData.append('filename', file.name);
+    formData.append('type', type);
+
+    uploadImage(formData);
+  }
+
+  onChangeFile = (event, id) => {
     event.stopPropagation();
     //stop browser defalt event
     event.preventDefault();
     let file = event.target.files[0];
-    console.log(event.target.files);
+    console.log(event.target.files[0]);
     //GET Image
     //get type
     //get name
     //get id
     //post to update
-    formData.append("image", file);
-    uploadImage(formData);
+    
+    
+    formData.append('fileExtention', '');
+  //  
 
     this.fetchItems(API_URL);
   }
@@ -152,7 +164,6 @@ class Home extends Component {
     this.setState({ rows });
     deleteData(key).then((result) => {
       
-      console.log(result.data.statusCode)
        if(result.data.statusCode === 201) {
         notify.show(`Row successfully deleted!`, 'success');
       } else {
@@ -168,7 +179,6 @@ class Home extends Component {
     columns.splice(idx, 1);
     this.setState({ columns });
     deleteData(key).then((result) => {
-      console.log(result.data.statusCode)
        if(result.data.statusCode === 201) {
         notify.show(`Column successfully deleted!`, 'success');
       } else {
@@ -196,6 +206,7 @@ class Home extends Component {
               <DrawTable
                 columns={this.state.columns}
                 rows={this.state.rows}
+                callback={this.callback}
                 changeCallback={this.handleSave}
                 upload={this.upload}
                 handleRemoveSpecificColumn={this.handleRemoveSpecificColumn}

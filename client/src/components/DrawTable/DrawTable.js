@@ -1,5 +1,6 @@
 import React from "react";
 import InlineEdit from "react-ions/lib/components/InlineEdit";
+import FileUpload from 'react-ions/lib/components/FileUpload'
 import styles from "react-ions/src/components/InlineEdit/style.scss";
 const DrawTable = props => {
   return (
@@ -30,11 +31,13 @@ const DrawTable = props => {
                     <i className="fa fa-minus" style={{ color: "red" }} />
                   </button>
                   <br />
-
+                    
+                    <FileUpload style={{width:'25px'}} showPreview={false} changeCallback={(event) => {props.callback(props.columns[colx].uniqueid, 'column', event )}} />
+               
                   <button
-                    onClick={() => {
-                      props.upload.click();
-                    }}
+                    onClick={
+                      () => {props.upload.click();}
+                      }
                     className="button button-square button-tiny"
                   >
                     <i className="fa fa-plus" />

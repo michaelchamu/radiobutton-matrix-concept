@@ -1,5 +1,6 @@
 const Hapi = require("hapi");
-const routes = require('./routes/matrix.routes');
+const routes = require('./routes/config/routes.config');
+
 const {mongoose} = require('./db/db.config'); 
 const server = Hapi.server({
   port: 3500,
