@@ -84,33 +84,15 @@ class Home extends Component {
     this.fetchItems(API_URL);
   };
 
-  callback = (id, type, event) => {
-    let file = event.target.value[0];
+  postImage = (id, type, fileObject) => {
+ 
+    let file = fileObject[0];
     formData.append("image", file);
     formData.append('id', id);
     formData.append('filename', file.name);
     formData.append('type', type);
 
     uploadImage(formData);
-  }
-
-  onChangeFile = (event, id) => {
-    event.stopPropagation();
-    //stop browser defalt event
-    event.preventDefault();
-    let file = event.target.files[0];
-    console.log(event.target.files[0]);
-    //GET Image
-    //get type
-    //get name
-    //get id
-    //post to update
-    
-    
-    formData.append('fileExtention', '');
-  //  
-
-    this.fetchItems(API_URL);
   }
 
   handleAddRow = () => {
@@ -193,22 +175,14 @@ class Home extends Component {
     return (
       <div>
       <Notifications />
-        <input
-          id="tinyimage"
-          type="file"
-          ref={ref => (this.upload = ref)}
-          style={{ display: "none" }}
-          onChange={this.onChangeFile.bind(this)}
-        />
         <div className="row">
           <div className="col-md-12">
             <div className="col-md-7">
               <DrawTable
                 columns={this.state.columns}
                 rows={this.state.rows}
-                callback={this.callback}
+                callback={this.postImage}
                 changeCallback={this.handleSave}
-                upload={this.upload}
                 handleRemoveSpecificColumn={this.handleRemoveSpecificColumn}
                 handleRemoveSpecificRow={this.handleRemoveSpecificRow}
               />

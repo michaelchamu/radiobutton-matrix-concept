@@ -1,7 +1,6 @@
 import React from "react";
 import InlineEdit from "react-ions/lib/components/InlineEdit";
-import FileUpload from 'react-ions/lib/components/FileUpload'
-import styles from "react-ions/src/components/InlineEdit/style.scss";
+import InputFiles from 'react-input-files';
 const DrawTable = props => {
   return (
     <div>
@@ -32,16 +31,10 @@ const DrawTable = props => {
                   </button>
                   <br />
                     
-                    <FileUpload style={{width:'25px'}} showPreview={false} changeCallback={(event) => {props.callback(props.columns[colx].uniqueid, 'column', event )}} />
-               
-                  <button
-                    onClick={
-                      () => {props.upload.click();}
-                      }
-                    className="button button-square button-tiny"
-                  >
-                    <i className="fa fa-plus" />
-                  </button>
+                  <InputFiles onChange={(files) => {props.callback(props.columns[colx].uniqueid, 'column', files )}}>
+                    <button  className="button button-square button-tiny"> <i className="fa fa-plus" /></button>
+                  </InputFiles>
+
                   <br />
                   <InlineEdit
                     name="column"
@@ -71,14 +64,9 @@ const DrawTable = props => {
                     <i className="fa fa-minus" style={{ color: "red" }} />
                   </button>
                   &nbsp;
-                  <button
-                    onClick={() => {
-                      props.upload.click();
-                    }}
-                    className="button button-square button-tiny"
-                  >
-                    <i className="fa fa-plus" />
-                  </button>
+                                    <InputFiles onChange={(files) => {props.callback(props.rows[idx].uniqueid, 'column', files )}}>
+                    <button  className="button button-square button-tiny"> <i className="fa fa-plus" /></button>
+                  </InputFiles>
                   <InlineEdit
                     name="row"
                     value={'' ? 'row': props.rows[idx].label}
