@@ -1,4 +1,5 @@
 let { Matrix } = require('../Models/Matrix.model');
+const _ = require('lodash');
 module.exports = [
 //update a record
  {

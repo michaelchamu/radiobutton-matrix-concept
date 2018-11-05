@@ -77,11 +77,12 @@ class Home extends Component {
     updateData(data).then((result) => {
       if(result.data.statusCode === 201) {
         notify.show(`${data.type} successfully updated!`, 'success');
+        this.fetchItems(API_URL);
       } else {
         notify.show(`${data.type} failed to update!`, 'error');
       }
     });
-    this.fetchItems(API_URL);
+    
   };
 
   postImage = (id, type, fileObject) => {
@@ -95,19 +96,18 @@ class Home extends Component {
 
     uploadImage(formData).then((result) => {
       //clear formdata
-      console.log('before: '+formData)
       formData.delete('image');
       formData.delete('id');
       formData.delete('filename');
       formData.delete('type');
-       console.log('after: '+formData)
       if(result.data.statusCode === 201) {
         notify.show(`Image successfully uploaded!`, 'success');
+        this.fetchItems(API_URL);
       } else {
         notify.show(`Image failed to upload!`, 'error');
       }
     });
-    this.fetchItems(API_URL);
+   
   }
 
   handleAddRow = () => {
@@ -125,11 +125,12 @@ class Home extends Component {
     }).then((result) => {
       if(result.data.statusCode === 201) {
         notify.show(`Row successfully added!`, 'success');
+        this.fetchItems(API_URL);
       } else {
         notify.show(`Row failed to add!`, 'error');
       }
     });
-    this.fetchItems(API_URL);
+    
   };
 
   handleAddColumn = () => {
@@ -147,12 +148,12 @@ class Home extends Component {
     }).then((result) => {
        if(result.data.statusCode === 201) {
         notify.show(`Column successfully added!`, 'success');
+        this.fetchItems(API_URL);
       } else {
         notify.show(`Column failed to add!`, 'error');
       }
     });
 
-    this.fetchItems(API_URL);
   };
 
   handleRemoveSpecificRow = (idx, key) => () => {
@@ -163,12 +164,11 @@ class Home extends Component {
       
        if(result.data.statusCode === 201) {
         notify.show(`Row successfully deleted!`, 'success');
+        this.fetchItems(API_URL);
       } else {
         notify.show(`Row failed to delete!`, 'error');
       }
     });;
-
-    this.fetchItems(API_URL);
   };
 
   handleRemoveSpecificColumn = (idx, key) => () => {
@@ -178,12 +178,12 @@ class Home extends Component {
     deleteData(key).then((result) => {
        if(result.data.statusCode === 201) {
         notify.show(`Column successfully deleted!`, 'success');
+        this.fetchItems(API_URL);
       } else {
         notify.show(`Column failed to delete!`, 'error');
       }
     });;
-
-    this.fetchItems(API_URL);
+    
   };
 
   render() {
