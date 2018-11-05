@@ -21,7 +21,7 @@ module.exports = [
              dataStore.longestColumn = _.map(dataStore.columns, "label").reduce(
                (a, b) => (a.length > b.length ? a : b),"").length;
              //count the total number of images saved in the database
-             dataStore.images = _.sumBy(results, ({ image }) => Number(image !== null));
+             dataStore.images = _.sumBy(results, ({ image }) => Number(image != null));
                resolve({statusCode: 200, dataStore});
             resolve(results)
           }, (err) => {

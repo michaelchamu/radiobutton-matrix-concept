@@ -62,18 +62,19 @@ const deleteData = key => {
 
 const uploadImage = formData => {
   console.log(formData);
-  axios
-    .post(`${API_URL}/pics`, formData)
-    .then(result => {
-      console.log(result)
-      return result;
-      //Perform action based on response
+    let promise = new Promise((resolve, reject) => {
+      axios
+        .post(`${API_URL}/pics`, formData)
+        .then(result => {
+            resolve(result);
+          //Perform action based on response
+        })
+        .catch(error => {
+          reject({statusCode: 500, message: error, notification: 'error'});
+          //Perform action based on error
+        });
     })
-    .catch(error => {
-      console.log(error)
-      return {statusCode: 500, message: error, notification: 'error'}
-      //Perform action based on error
-    });
+  return promise;
 };
 
 export { saveData, updateData, deleteData, uploadImage, getData };

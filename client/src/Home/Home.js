@@ -87,12 +87,27 @@ class Home extends Component {
   postImage = (id, type, fileObject) => {
  
     let file = fileObject[0];
+
     formData.append("image", file);
     formData.append('id', id);
     formData.append('filename', file.name);
     formData.append('type', type);
 
-    uploadImage(formData);
+    uploadImage(formData).then((result) => {
+      //clear formdata
+      console.log('before: '+formData)
+      formData.delete('image');
+      formData.delete('id');
+      formData.delete('filename');
+      formData.delete('type');
+       console.log('after: '+formData)
+      if(result.data.statusCode === 201) {
+        notify.show(`Image successfully uploaded!`, 'success');
+      } else {
+        notify.show(`Image failed to upload!`, 'error');
+      }
+    });
+    this.fetchItems(API_URL);
   }
 
   handleAddRow = () => {
