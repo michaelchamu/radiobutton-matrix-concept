@@ -31,9 +31,11 @@ const DrawTable = props => {
                   </button>
                   <br />
                     
-                  <InputFiles onChange={(files) => {props.callback(props.columns[colx].uniqueid, 'column', files )}}>
-                    <button  className="button button-square button-tiny"> <i className="fa fa-plus" /></button>
-                  </InputFiles>
+                  { !props.columns[colx].image ? <InputFiles onChange={(files) => {props.callback(props.columns[colx].uniqueid, 'column', files )}}>
+                                      <button  className="button button-square button-tiny"> <i className="fa fa-plus" /></button>
+                                    </InputFiles> : <InputFiles onChange={(files) => {props.callback(props.columns[colx].uniqueid, 'column', files )}}>
+                                      <button  className="button button-square button-tiny"></button>
+                                    </InputFiles>}
 
                   <br />
                   <InlineEdit
@@ -64,17 +66,22 @@ const DrawTable = props => {
                     <i className="fa fa-minus" style={{ color: "red" }} />
                   </button>
                   &nbsp;
-                                    <InputFiles onChange={(files) => {props.callback(props.rows[idx].uniqueid, 'column', files )}}>
-                    <button  className="button button-square button-tiny"> <i className="fa fa-plus" /></button>
-                  </InputFiles>
-                  <InlineEdit
-                    name="row"
-                    value={'' ? 'row': props.rows[idx].label}
-                    changeCallback={event =>
-                      props.changeCallback(event, props.rows[idx].uniqueid)
-                    }
-                    loading={props.loading}
-                  />
+
+                  { !props.rows[idx].image ? <InputFiles onChange={(files) => {props.callback(props.rows[idx].uniqueid, 'row', files )}}>
+                                      <button  className="button button-square button-tiny"> <i className="fa fa-plus" /></button>
+                                    </InputFiles> : <InputFiles onChange={(files) => {props.callback(props.rows[idx].uniqueid, 'row', files )}}>
+                                      <button  className="button button-square button-tiny"></button>
+                                    </InputFiles>}
+         
+                                         <InlineEdit
+                                        name="row"
+                                            value={'' ? 'row': props.rows[idx].label}
+                                             changeCallback={event =>
+                                       props.changeCallback(event, props.rows[idx].uniqueid)
+                                         }
+                                         loading={props.loading}
+                                            /> 
+                  
                   <br />
                 </span>
               </td>
