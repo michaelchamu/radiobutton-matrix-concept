@@ -5,14 +5,14 @@ let MatrixSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    label:{
-    	type: String
+    label: {
+        type: String
     },
-    image:{
-    	type: String
+    image: {
+        type: String
     },
-    uniqueid:{
-    	type: String
+    uniqueid: {
+        type: String
     }
 });
 

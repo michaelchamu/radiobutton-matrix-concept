@@ -49,16 +49,19 @@ module.exports = [
                         reject({ statusCode: 400, message: 'image upload failed' })
                     } else {
                         //update row or column by ID
-                        Matrix.findOneAndUpdate({'uniqueid': request.payload.id, 'type': request.payload.type}, {$set: {
-                            'image': request.payload.filename
-                        }}).then((record) => {
-                            if(!record){
-                                resolve({statusCode: 404})}
-                            else{
-                                 resolve({statusCode:201})}
+                        Matrix.findOneAndUpdate({ 'uniqueid': request.payload.id, 'type': request.payload.type }, {
+                            $set: {
+                                'image': request.payload.filename
+                            }
+                        }).then((record) => {
+                            if (!record) {
+                                resolve({ statusCode: 404 })
+                            } else {
+                                resolve({ statusCode: 201 })
+                            }
                         }).catch((err) => {
-                            reject({statusCode: 400, message: err});
-                    })
+                            reject({ statusCode: 400, message: err });
+                        })
                     }
                 });
             })

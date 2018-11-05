@@ -2,16 +2,15 @@ import React from "react";
 import InlineEdit from "react-ions/lib/components/InlineEdit";
 import InputFiles from 'react-input-files';
 const DrawTable = props => {
-  return (
-    <div>
+    return (
+        <div>
       <h4>
         <b>Question Edition View</b>
       </h4>
       <i>Title of question</i>
       <table
         className="table table-borderless table-hover scrollable"
-        id="tab_logic"
-      >
+        id="tab_logic">
         <thead>
           {
             <tr>
@@ -79,8 +78,7 @@ const DrawTable = props => {
                                              changeCallback={event =>
                                        props.changeCallback(event, props.rows[idx].uniqueid)
                                          }
-                                         loading={props.loading}
-                                            /> 
+                                         loading={props.loading} /> 
                   
                   <br />
                 </span>
@@ -101,7 +99,7 @@ const DrawTable = props => {
         </tbody>
       </table>
     </div>
-  );
+    );
 };
 
 export default DrawTable;

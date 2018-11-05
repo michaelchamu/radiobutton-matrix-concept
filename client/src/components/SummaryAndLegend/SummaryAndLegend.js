@@ -1,8 +1,8 @@
 import React from "react";
 
 const SummaryBlock = props => {
-  return (
-    <div>
+    return (
+        <div>
       <h4>
         <b>Question Summary View</b>
       </h4>
@@ -19,12 +19,12 @@ const SummaryBlock = props => {
       <br />
       Longest column label: {props.longestColumn}
     </div>
-  );
+    );
 };
 
 const LegendBlock = () => {
-  return (
-    <div>
+    return (
+        <div>
       <div className="col-md-6">
         <h4>
           <b>Legend</b>
@@ -50,7 +50,7 @@ const LegendBlock = () => {
         <br />
       </div>
     </div>
-  );
+    );
 };
 
 export { SummaryBlock, LegendBlock };
