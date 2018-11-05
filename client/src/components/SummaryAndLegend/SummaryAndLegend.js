@@ -29,6 +29,10 @@ const LegendBlock = () => {
         <h4>
           <b>Legend</b>
         </h4>
+         <button className="button button-square button-tiny">
+          
+        </button>{" "}
+        - Image already uploaded. You can still click to add a new one <br />
         <button className="button button-square button-tiny">
           <i className="fa fa-plus" />
         </button>{" "}
